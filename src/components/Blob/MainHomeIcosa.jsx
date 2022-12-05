@@ -11,46 +11,16 @@ function MainHomeIcosa(props) {
   const [scale, setScale] = useState(1);
 
 
-  const degToRad = (degrees) =>{
-      var pi = Math.PI;
-      return degrees * (pi/180);
-  }
-
-  const handleScroll = (e) => {
-    if (e.deltaY > 0) {
-      if (scale < 3) {
-        setScale(scale + 0.15);
-      } else {
-        setScale(0.1);
-      }
-    }
-    if (e.deltaY < 0) {
-      if (scale < 3) {
-        setScale(scale - 0.15);
-      } else {
-        setScale(0.1);
-      }
-    }
-    console.log("AAA", e);
-  };
-
-  useEffect(() => {
-    window.addEventListener("wheel", (e) => handleScroll(e));
-    return () => window.removeEventListener("wheel", (e) => handleScroll(e));
-  });
 
   const { ...meshProps } = useSpring({
-    scale: scale,
-    rotation: hovered
-      ? [degToRad(180), 0, degToRad(45)]
-      : [0, 0, 0],
-    config: { duration: 400 }
+    scale: hovered ? [1.1, 1.1, 1.1] : [0.9, 0.9, 0.9],
+    config: { duration: 100 }
   });
 
   const { ...materialProps } = useSpring({
-    color: hovered ? "#f25f4c" : "#d95043",
+    color: hovered ? "#fa8301" : "#d95043",
     opacity: hovered ? 0.95 : 1,
-    config: { duration: 300 }
+    config: { duration: 100 }
   });
 
   /* Rotate */

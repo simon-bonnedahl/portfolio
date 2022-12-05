@@ -9,10 +9,6 @@ function MainHomeSphere(props) {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
-  const degToRad = (degrees) =>{
-      var pi = Math.PI;
-      return degrees * (pi/180);
-  }
 
   const { ...meshProps } = useSpring({
     scale: hovered ? [1.1, 1.1, 1.1] : [0.9, 0.9, 0.9],
