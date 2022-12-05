@@ -4,13 +4,15 @@ import { Suspense, useState, useEffect } from 'react';
 import MainHomeIcosa from './MainHomeIcosa';
 import MainHomeSphere from './MainHomeSphere';
 
-const Blob = () => {
+const Blob = ({size}) => {
     const [random, setRandom] = useState(2);
-
+    
+    let wpx = size + "px"
+    let hpx = size + "px"
 
     return (
-    <div id="blob">
-    <Canvas style={{ width: "100vw", height: "96vh" }}>
+    <div id="blob" style={{width: wpx, heigth: hpx}}>
+    <Canvas style={{ width: size, height: size }}>
         <Suspense fallback={null}>
           {random === 1 ? <MainHomeIcosa position={[0, 0, 0]} /> : ""}
           {random === 2 ? <MainHomeSphere position={[0, 0, 0]} /> : ""}

@@ -5,7 +5,7 @@ import './Home.css'
 const Home = () => {
     return (
     <div id="home">
-        <Blob></Blob>
+        <Blob size={1000}></Blob>
         <div id="homeText">
             <h1>Hey! <span className="wave" role="img" aria-labelledby="wave">
                   👋🏼
@@ -26,7 +26,7 @@ const Home = () => {
             </span>
             </h1>
             <button className="button-5">
-                View Work
+                Learn More
                 <a href="#about"></a>
             </button>
         </div>
