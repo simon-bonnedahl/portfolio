@@ -1,7 +1,7 @@
 import THREE from "three.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
 import './Stream.css'
+import $ from "jquery"
 const Stream = () =>{
     var mContainer;
     var mCamera, mRenderer;
@@ -9,18 +9,27 @@ const Stream = () =>{
 
     var mScene;
 
-    var mParticleCount = 1000000; // <-- change this number!
+    var mParticleCount = 50000; // <-- change this number!
     var mParticleSystem;
 
     var mTime = 0.0;
     var mTimeStep = (1/60);
     var mDuration = 20;
 
-    var width = 1000, height = 1000;
+    var width = $("#three-container").width()
+    var height = $("#three-container").height();
+
+    var startPos = [0, 500, 0]
+    var endPos = [0, 0, 2000 ]
+    var cameraOutZoom = 1000
+    var lightPos = [100, 400, 500]
+
+    var mRenderer;
 
     window.onload = function () {
     init();
     };
+
 
     function init() {
         initTHREE();
@@ -34,20 +43,23 @@ const Stream = () =>{
     function initTHREE() {
     mRenderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
     mContainer = document.getElementById('three-container');
-    
+    width = $("#three-container").width()
+    console.log("🚀 ~ file: Stream.js:45 ~ initTHREE ~ width", width)
+    height = $("#three-container").height();
+    console.log("🚀 ~ file: Stream.js:47 ~ initTHREE ~ height", height)
     mRenderer.setSize(width, height)
     
     mContainer.appendChild(mRenderer.domElement);
 
     mCamera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 5000);
-    mCamera.position.set(0, 600, 600);
+    mCamera.position.set(0, 0, cameraOutZoom);
     
     mScene = new THREE.Scene();
 
     var light;
 
     light = new THREE.PointLight(0xffffff, 5, 1000, 2);
-    light.position.set(100, 400, 0);
+    light.position.set(lightPos[0], lightPos[1], lightPos[2]);
     mScene.add(light);
     }
 
@@ -88,9 +100,9 @@ const Stream = () =>{
     var x, y, z;
 
     for (i = 0, offset = 0; i < mParticleCount; i++) {
-        x = 1000;
-        y = 0;
-        z = 0;
+        x = startPos[0];
+        y = startPos[1];
+        z = startPos[2];
 
         for (j = 0; j < prefabGeometry.vertices.length; j++) {
         aStartPosition.array[offset++] = x;
@@ -128,9 +140,9 @@ const Stream = () =>{
     // buffer end positions
 
     for (i = 0, offset = 0; i < mParticleCount; i++) {
-        x = 1000;
-        y = 500;
-        z = 0;
+        x = endPos[0];
+        y = endPos[1];
+        z = endPos[2];
 
         for (j = 0; j < prefabGeometry.vertices.length; j++) {
         aEndPosition.array[offset++] = x;
@@ -169,7 +181,6 @@ const Stream = () =>{
         l = THREE.Math.randFloat(0.4, 0.6);
 
         color.setHSL(h, s, l);
-        //console.log("🚀 ~ file: Stream.js:167 ~ initParticleSystem ~ color", color)
         
 
         for (j = 0; j < prefabGeometry.vertices.length; j++) {
