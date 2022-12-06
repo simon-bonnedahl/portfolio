@@ -1,14 +1,6 @@
 import Stream from "../Stream/Stream";
 import Blob from "../Blob/Blob";
 import Typewriter from 'typewriter-effect';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaGithub } from 'react-icons/fa';
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
 import {ReactComponent as GithubLogo }from "../Icon/svg/github.svg";
 import {ReactComponent as LinkedInLogo }from "../Icon/svg/linkedin.svg";
 import {ReactComponent as CodePenLogo }from "../Icon/svg/codepen.svg";
@@ -36,8 +28,6 @@ const Home = () => {
                         }}/>
                 </span>
                 </h1>
-                
-         
                 
                 <div id="socials">
                     
