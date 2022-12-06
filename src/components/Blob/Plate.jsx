@@ -4,7 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { useSpring, animated } from "@react-spring/three";
 
-function MainHomeIcosa(props) {
+function Plate(props) {
   const mesh = useRef();
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
@@ -13,20 +13,19 @@ function MainHomeIcosa(props) {
 
 
   const { ...meshProps } = useSpring({
-    scale: hovered ? [1.1, 1.1, 1.1] : [0.9, 0.9, 0.9],
-    config: { duration: 300 }
+    scale: [0.9, 0.9, 0.9],
+    config: { duration: 100 }
   });
 
   const { ...materialProps } = useSpring({
-    color: hovered ? "#fa8301" : "#d95043",
-    opacity: hovered ? 0.95 : 1,
+    color:  "#d95043",
+    opacity: hovered ? 0.7 : 1,
     config: { duration: 100 }
   });
 
   /* Rotate */
   useFrame((state, delta) => {
-    mesh.current.rotation.x += 0.004;
-    mesh.current.rotation.y += 0.006;
+    mesh.current.rotation.y += hovered ?  0.005 : 0.001;
   });
 
   return (
@@ -38,17 +37,18 @@ function MainHomeIcosa(props) {
       onClick={() => setActive(!active)}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
+      rotation ={[-0.4, 0, 0]}
     >
-      <icosahedronGeometry args={[2.2, 0, 2.2]} attach="geometry" />
+      <cylinderGeometry args={[3, 3  , 0.1, 10]} attach="geometry" />
       <animated.meshStandardMaterial
         attach="material"
         transparent
         {...materialProps}
-        roughness={1}
-        metalness={0.1}
+        roughness={0.3}
+        metalness={0.4}
       />
     </animated.mesh>
   );
 }
 
-export default MainHomeIcosa;
+export default Plate;

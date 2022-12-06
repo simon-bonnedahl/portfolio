@@ -5,26 +5,20 @@
     display: flex;
 }
 #homeText{
-    position: relative;
-    top: 20vh;
-    left: 10vw;
-    width: 50vw;
-    height: 40vh;
+    width: 100%;
+    height: 50vh;
     display: flex;
     flex-direction: column;
-
     justify-content: space-between;
+    align-items: center;
 
 
-}
-#name{
-    color: #ff8906
 }
 
 .button-5 {
     align-items: center;
     background-clip: padding-box;
-    background-color: #ff8906;
+    background-color: #ff7e00;
     border: 1px solid transparent;
     border-radius: .25rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
@@ -47,13 +41,13 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: baseline;
-    width: 20%;
+    width: 15%;
     
 }
 
 .button-5:hover,
 .button-5:focus {
-    background-color: #ff8906;
+    background-color: #ff7e00;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
@@ -114,11 +108,55 @@
 }
 h1{
     margin:auto;
-    font-size: 40pt;
+    font-size: 45pt;
 }
 #blob{
-    position: absolute;
-    top: -10%;
-    left: 50%;
+}
+#left{
+    position: relative;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#right{
+    position: relative;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.brand-text {
+    color: #f25f4c
+}
+#name{
+    color: #ff8906;
+    color: #ff7e00;
+}
+
+#socials{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12%;
+    width: 20%;
+}
+
+.social-logo{
+    height: 100%;
+    width: auto;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(119deg) brightness(104%) contrast(102%);
+}
+.social-logo:hover{
+    filter: invert(52%) sepia(74%) saturate(1187%) hue-rotate(354deg) brightness(101%) contrast(106%);
+}
+#linkedin{
+    height: 85%;
+}
+#github{
+    height: 100%;
+}
+#codepen {
+    height: 100%;
 }

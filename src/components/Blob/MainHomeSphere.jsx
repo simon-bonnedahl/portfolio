@@ -12,7 +12,7 @@ function MainHomeSphere(props) {
 
   const { ...meshProps } = useSpring({
     scale: hovered ? [1.1, 1.1, 1.1] : [0.9, 0.9, 0.9],
-    config: { duration: 100 }
+    config: { duration: 300 }
   });
 
   /* Rotate */
@@ -31,17 +31,17 @@ function MainHomeSphere(props) {
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >
-      <sphereGeometry args={[1.6, 200, 200]} attach="geometry" />
+      <sphereGeometry args={[1.8, 200, 200]} attach="geometry" />
       <MeshDistortMaterial
         attach="material"
         distort={0.5} // Strength, 0 disables the effect (default=1)
         speed={0.8} // Speed (default=1)
-        roughness={1}
-        metalness={0.1}
+        roughness={0.5}
+        metalness={0.3}
         color={hovered ? "#fa8301" : "#d95043"}
         opacity={hovered ? 0.95 : 1}
       />
-      <OrbitControls enableZoom={false} />
+
     </animated.mesh>
   );
 }
