@@ -1,8 +1,11 @@
 import React from "react";
 import $ from "jquery";
 import './Navbar.css'
+import { act } from "react-dom/test-utils";
 
 const Navbar = () => {
+  
+    var scrollAnimate = false
 
     $(document).on('click', '#tabs li a', function(){
         var $this = $(this);
@@ -11,9 +14,17 @@ const Navbar = () => {
       
         $this.closest('li').siblings('.active').removeClass('active');
         $this.closest('li').addClass('active');
+         
         $('html, body').animate({
                     scrollTop: $($this.attr('href')).offset().top
                 }, 500);
+                
+        scrollAnimate = true;
+        setTimeout(() => {
+          scrollAnimate = false;
+        }, "500")
+        
+        return false;
     });
     var TabHighlighter = {
         set: function($this){
@@ -24,7 +35,6 @@ const Navbar = () => {
         },
         refresh: function(){      //Set the highlighter to the correct active tab
             var $this = $('.active');
-            console.log("🚀 ~ file: Navbar.js:24 ~ Navbar ~ $this", $this)
             
             $('#tab-highlighter').css({
                 'left':  $this.closest('li').offset().left,
@@ -32,16 +42,52 @@ const Navbar = () => {
             });
         }
     };
-    
+    window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+    }
+
     window.onload = function () {
-    TabHighlighter.refresh();
-    };
-    $(window).resize(function(){
         TabHighlighter.refresh();
+    }
+    window.onresize = function () {
+        TabHighlighter.refresh();
+    }
+
+    $(window).on('scroll', function() {
+      if(!scrollAnimate){
+
+      
+        var pos = $(window).scrollTop();
+        var pos2 = pos + 100
+    
+        
+        if (pos2 > $('#about').offset().top) {
+          highlightLink('about');
+        }else{
+          highlightLink('home');
+        }
+        if (pos2 > $('#projects').offset().top) {
+          highlightLink('projects');
+        }
+        if (
+          pos2 > $('#contact').offset().top ||
+          pos + $(window).height() === $(document).height()
+        ) {
+          highlightLink('contact');
+        }
+
+      }
     });
-    $(document).ready(function(){
-      TabHighlighter.refresh();
-    });
+  
+    function highlightLink(anchor) {
+      $('nav .active').removeClass('active');
+      let a =  $('#tabs li').find("a[href$=" + anchor + "]")
+      console.log("🚀 ~ file: Navbar.js:69 ~ highlightLink ~ a", a)
+      //a.parent.addClass('active')
+      a.closest('li').addClass('active');
+      TabHighlighter.set(a);
+    }
+ 
   
   
     return (

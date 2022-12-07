@@ -1,5 +1,6 @@
 import Stream from "../Stream/Stream";
 import Blob from "../Blob/Blob";
+import $ from "jquery";
 import Typewriter from 'typewriter-effect';
 import {ReactComponent as GithubLogo }from "../Icon/svg/github.svg";
 import {ReactComponent as LinkedInLogo }from "../Icon/svg/linkedin.svg";
@@ -7,6 +8,14 @@ import {ReactComponent as CodePenLogo }from "../Icon/svg/codepen.svg";
 
 import './Home.css'
 const Home = () => {
+   
+    $(document).on('click', '.button-5', function(){
+        $('html, body').animate({
+                    scrollTop: $('#about').offset().top
+                }, 500);
+        return false;
+    });
+
     return (
     <div id="home">
         <div id ="left">
@@ -44,7 +53,7 @@ const Home = () => {
           
                 </div>
                 
-                <button dest="about" className="button-5">
+                <button className="button-5">
                     Learn More
                     
                 </button>
