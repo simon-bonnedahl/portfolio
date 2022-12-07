@@ -24,13 +24,18 @@ nav li{
 }
 nav a{
     text-decoration: none;
-    color: #fff;
 
     -webkit-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -moz-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -ms-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -o-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
+}
+nav a.light{
+    color: #fff;
+}
+nav a.dark{
+    color: #0f0e17;
 }
 nav a:hover{
     color: #ff7e00;

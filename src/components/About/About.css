@@ -1,4 +1,28 @@
 #about{
     height: 100vh;
-    background-color: #0f0e17;
+    background-color: #fffffe;
+}
+#about h1{
+    color:#0F0E17
+}
+.custom-shape-divider-top-1670383877 {
+    position: relative;
+    top: -1%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1670383877 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 128px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1670383877 .shape-fill {
+    fill: #0F0E17;
 }

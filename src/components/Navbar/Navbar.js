@@ -18,7 +18,7 @@ const Navbar = () => {
         $('html, body').animate({
                     scrollTop: $($this.attr('href')).offset().top
                 }, 500);
-                
+
         scrollAnimate = true;
         setTimeout(() => {
           scrollAnimate = false;
@@ -58,16 +58,19 @@ const Navbar = () => {
 
       
         var pos = $(window).scrollTop();
-        var pos2 = pos + 100
+        var pos2 = pos  + 50
     
         
         if (pos2 > $('#about').offset().top) {
           highlightLink('about');
+          switchColorDark()
         }else{
           highlightLink('home');
+          switchColorLight()
         }
         if (pos2 > $('#projects').offset().top) {
           highlightLink('projects');
+          switchColorLight()
         }
         if (
           pos2 > $('#contact').offset().top ||
@@ -81,23 +84,38 @@ const Navbar = () => {
   
     function highlightLink(anchor) {
       $('nav .active').removeClass('active');
-      let a =  $('#tabs li').find("a[href$=" + anchor + "]")
-      console.log("🚀 ~ file: Navbar.js:69 ~ highlightLink ~ a", a)
-      //a.parent.addClass('active')
-      a.closest('li').addClass('active');
-      TabHighlighter.set(a);
+      let tab =  $('#tabs li').find("a[href$=" + anchor + "]")
+      tab.closest('li').addClass('active');
+      TabHighlighter.set(tab);
     }
- 
+    function switchColorDark() {
+      let tabs = $('#tabs li')
+      tabs.each(function(idx, li) {
+         $(li).children('a').removeClass('light'); 
+         $(li).children('a').addClass('dark');
+          
+    });
+    }
+    function switchColorLight() {
+      let tabs = $('#tabs li')
+      tabs.each(function(idx, li) {
+         $(li).children('a').removeClass('dark'); 
+         $(li).children('a').addClass('light');
+          
+    });
+        
+          
+    }
   
   
     return (
       <nav>
           <div id="tabs">
             <ul>
-              <li className="active"><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li className="active"><a  className="light" href="#home">Home</a></li>
+              <li>                   <a  className="light" href="#about">About</a></li>
+              <li>                   <a  className="light" href="#projects">Projects</a></li>
+              <li>                   <a  className="light" href="#contact">Contact</a></li>
             </ul>
             <div id="tab-highlighter"></div>
           </div>
