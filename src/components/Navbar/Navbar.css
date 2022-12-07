@@ -1,112 +1,59 @@
-/*Styling links*/
-navbar a {
-    font-size: 16px;
-    font-weight: 300;
-    font-family: "Montserrat", sans-serif;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    padding: 10px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    margin: 4px;
-    
+nav{
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    z-index: 1;
 }
 
-navbar a:hover,
-navbar a:active,
-navbar a {
-    text-decoration: none;
-}
-
-navbar a {
-    color: #fff;
-    font-weight: 500;
-    font-size: 20px;
+#tabs{
+    display: flex;
+    width: 50%;
+    height: 100%;
     float: right;
 }
-
-
-navbar .navbar-body {
-    
+nav ul{
+    width: 100%;
+    list-style: none;
     display: flex;
-    display: -webkit-flex;
-    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    -webkit-align-items: center;
-    justify-content: space-between;
-    height: 10%;
-    width: 40%;
-    border: 1px solid white;
 }
+nav a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 1000;
+    font-size: 30;
 
-
-navbar .tabs {
-    z-index: 0;
-    position: relative;
-}
-
-navbar .tabs .navbar-body {
-    padding: 0;
-    margin-bottom: 0;
-}
-
-
-
-/*Styling Tabs*/
-navbar .tabs .navbar-body li.active a, navbar .tabs .navbar-body li a:hover {
-    color: #ff7e00;
-}
-
-navbar .tabs .navbar-body li {
-    list-style-type: none;
     -webkit-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -moz-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -ms-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -o-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
 }
+nav a:hover{
+    color: #ff7e00;
+}
 
+li.active{
+    color: #ff7e00;
+}
+li a.active {
+    color: #ff7e00;
+}
+#tabs li.active a, #tabs li a:hover {
+    color: #ff7e00;
+}
 
-
-/*Styling Tab Highlighter*/
-navbar .tab-highlighter {
+#tab-highlighter {
     height: 2px;
-    width: 50px;
-    margin-top: -2px;
+    width: 43px;
     background: #ff7e00;
     position: absolute;
+    bottom: 30%;
+    left: 56.85%;
     -webkit-transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
     -moz-transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
     -ms-transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
     -o-transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
     transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
-}
-
-/*Keyframes*/
-@keyframes SwiftSlide {
-    100% {
-        margin-right: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes SwiftSlideToRight {
-    100% {
-        opacity: 0;
-        margin-right: -30px;
-    }
-}
-
-#test{
-    width: 100%;
-    position: relative;
 }
