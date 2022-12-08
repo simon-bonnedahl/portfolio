@@ -11,3 +11,10 @@ footer{
     height: 30vh;
     width: 100vw;
 }
+
+
+#contact h1{
+    position: absolute;
+    left: 5%;
+    top: 10%;
+}

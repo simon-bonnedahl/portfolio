@@ -1,12 +1,15 @@
 #about{
-    height: 120vh;
     background-color: #fffffe;
+    min-height: 120vh;
 }
 #about h1{
-    color:#0F0E17
+    color:#0F0E17;
+    position: absolute;
+    left: 5%;
+    top: 20%;
 }
 .custom-shape-divider-top-1670383877 {
-    position: relative;
+    position: absolute;
     top: -1%;
     left: 0;
     width: 100%;
@@ -29,8 +32,8 @@
 
 
 .custom-shape-divider-bottom-1670455273 {
-    position: relative;
-    bottom: 0;
+    position: absolute;
+    bottom: 0%;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -48,9 +51,9 @@
     fill: #0F0E17;
 }
 
-
 #avatar{
+    position: absolute;
+    right: 0;
     width: 50%;
-    height: 70%;
-    float: right;
+    height: 100%;
 }

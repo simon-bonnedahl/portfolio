@@ -3,7 +3,38 @@
 h1{
   color: #fff
 }
+h2{
+  color: #fff;
+}
 body{
   background-color: #0f0e17;
   overflow-x: hidden;
 }
+
+section{
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 0.5s;
+}
+
+.visible{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+
+}
+@media(prefer-reduced-motion) {
+    .hidden{
+      transition: none;
+    }
+   
+  }

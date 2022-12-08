@@ -6,6 +6,7 @@
     height: 100vh;
     width: 100vw;
     display: flex;
+    margin-top: 5%;
 }
 .project {
     width: 100%;
@@ -16,7 +17,24 @@
     align-items: center;
 }
 
-.ssp{
+.spline-scene-phone{
     width: 60%;
     height: 80%;
+}
+
+#projects h1{
+    color: white;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}
+
+#projects-container:nth-child(2){
+    transition-delay: 200ms;
+}
+#projects-container:nth-child(3) {
+    transition-delay: 1000ms;
+}
+#projects-container:nth-child(4) {
+    transition-delay: 600ms;
 }
