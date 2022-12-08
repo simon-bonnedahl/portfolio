@@ -1,5 +1,5 @@
 #about{
-    height: 100vh;
+    height: 120vh;
     background-color: #fffffe;
 }
 #about h1{
@@ -25,4 +25,32 @@
 
 .custom-shape-divider-top-1670383877 .shape-fill {
     fill: #0F0E17;
+}
+
+
+.custom-shape-divider-bottom-1670455273 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1670455273 svg {
+    position: relative;
+    display: block;
+    width: calc(125% + 1.3px);
+    height: 131px;
+}
+
+.custom-shape-divider-bottom-1670455273 .shape-fill {
+    fill: #0F0E17;
+}
+
+
+#avatar{
+    width: 50%;
+    height: 70%;
+    float: right;
 }

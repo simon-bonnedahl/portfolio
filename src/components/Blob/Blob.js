@@ -7,7 +7,7 @@ import Plate from './Plate';
 
 const Blob = ({size}) => {
     const objects = [<MainHomeIcosa position={[0, 0.8, 0]}/>, <MainHomeSphere position={[0, 0.8, 0]} />]
-    const [number, setNumber] = useState(1)
+    const [number, setNumber] = useState(0)
 
     
     let wpx = size + "px"

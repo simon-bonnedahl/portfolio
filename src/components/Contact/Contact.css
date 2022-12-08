@@ -7,7 +7,7 @@
 footer{
     position:absolute;
     bottom: 0;
-    background-color: #09090e;
+    background: linear-gradient(#0f0e17, #000);
     height: 30vh;
     width: 100vw;
 }
