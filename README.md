@@ -1,1 +1,1 @@
-# [Under development](https://simon-bonnedahl.github.io/portfolio/)
+# [Under development](https://simonbonnedahl.dev/)
