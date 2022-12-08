@@ -17,7 +17,7 @@ const Home = () => {
     });
 
     return (
-    <div id="home">
+    <section id="home">
         <div id ="left">
             <div id="homeText">
                 <h1>Hey! <span className="wave" role="img" aria-labelledby="wave">
@@ -64,7 +64,7 @@ const Home = () => {
         </div>
         
         
-    </div>  );
+    </section>  );
 }
  
 export default Home;
