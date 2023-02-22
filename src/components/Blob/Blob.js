@@ -18,7 +18,7 @@ const Blob = ({size}) => {
     return (
     <div id="blob" style={{width: wpx, heigth: hpx}} onClick={() => setNumber((number + 1) % objects.length)}>
     <Canvas style={{ width: size, height: size }}>
-        <Suspense fallback={null}>
+        <Suspense fallback={<div>Loading...</div>}>
          {objects[number]}
         <Plate position={[0, -3, -1]}/>
     

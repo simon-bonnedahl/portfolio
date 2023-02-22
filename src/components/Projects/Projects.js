@@ -1,30 +1,38 @@
-
-import Spline from '@splinetool/react-spline';
-
-import './Projects.css'
+import React, { Suspense } from "react";
+import { useRef } from "react";
+import "./Projects.css";
+const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 const Projects = () => {
-    return ( 
-        <section id="projects">
-            <h1 className='hidden'>Projects</h1>
-            <div id="projects-container">
-                <div className='project hidden'>
-                    <h2>CryptoWords iOS </h2>
-                    <div className='spline-scene-phone'>
-                        <Spline scene="https://prod.spline.design/VZOL12IjAC4dRCKT/scene.splinecode" />
-                    </div>
-                    <button className='button-5'>View</button>
-                </div>
-                 <div className='project hidden'>
-                    <h2>Title 2</h2>
-                    <div className='spline-scene-phone'>
-                        <Spline scene="https://prod.spline.design/dcW1IC7Hj6K-d0Cj/scene.splinecode" />
-                    </div>
-                    <button className='button-5'>View</button>
-                </div>
-            </div>
-        </section>
-    );
-}
- 
+  const phone = useRef();
+
+  function onLoad(spline) {
+    const obj = spline.findObjectById("41df4a9b-65d8-48f3-9159-c0e10fc9c595");
+    phone.current = obj;
+  }
+  function onMouseDown(e) {
+    console.log("onMouseDown");
+    if (e.target.id === "41df4a9b-65d8-48f3-9159-c0e10fc9c595") {
+      console.log("I have been clicked!");
+    }
+  }
+  return (
+    <section id="projects">
+      <h1 className="hidden">Projects</h1>
+      <div id="projects-container">
+        <div className="project hidden">
+          <h2>CryptoWords </h2>
+          <div className="spline-scene-phone">
+            <Spline scene="https://prod.spline.design/VZOL12IjAC4dRCKT/scene.splinecode" />
+          </div>
+          <button className="button-5">View</button>
+        </div>
+        <div className="project hidden">
+          <button className="button-5">View</button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default Projects;

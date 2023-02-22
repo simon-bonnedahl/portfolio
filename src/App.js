@@ -11,7 +11,6 @@ import $ from "jquery"
 function App() {
 
   $( document ).ready(function() {
-    console.log("hej")
     setTimeout(function() {
       $('#loader-section').fadeOut('slow', function() {});
     }, 2000);
@@ -23,7 +22,6 @@ function App() {
     })
     
     const hiddenElements = document.querySelectorAll(".hidden");
-    console.log("🚀 ~ file: App.js:24 ~ App ~ hiddenElements", hiddenElements)
     
     hiddenElements.forEach(element => {
       observer.observe(element)

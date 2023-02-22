@@ -11,6 +11,7 @@
     "@react-spring/three": "^9.5.5",
     "@react-three/drei": "^9.46.2",
     "@react-three/fiber": "^8.9.1",
+    "@splinetool/r3f-spline": "^1.0.2",
     "@splinetool/react-spline": "^2.2.5",
     "@splinetool/runtime": "^0.9.150",
     "@testing-library/jest-dom": "^5.16.5",
