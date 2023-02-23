@@ -28,6 +28,10 @@ const Projects = () => {
           <button className="button-5">View</button>
         </div>
         <div className="project hidden">
+          <h2>Food Delivery App </h2>
+          <div className="spline-scene-phone">
+            <Spline scene="https://prod.spline.design/lW-DWl-ureIZJEQK/scene.splinecode" />
+          </div>
           <button className="button-5">View</button>
         </div>
       </div>
