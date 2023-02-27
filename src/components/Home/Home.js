@@ -7,7 +7,7 @@ import { ReactComponent as CodePenLogo } from "../Icon/svg/codepen.svg";
 
 import "./Home.css";
 const Home = () => {
-  $(document).on("click", ".button-5", function () {
+  $(document).on("click", ".learn-more", function () {
     $("html, body").animate(
       {
         scrollTop: $("#about").offset().top,
@@ -64,7 +64,7 @@ const Home = () => {
             </a>
           </div>
 
-          <button className="button-5">Learn More</button>
+          <button className="button-5 learn-more">Learn More</button>
         </div>
       </div>
       <div id="right">

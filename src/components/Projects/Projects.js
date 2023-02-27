@@ -25,14 +25,25 @@ const Projects = () => {
           <div className="spline-scene-phone">
             <Spline scene="https://prod.spline.design/VZOL12IjAC4dRCKT/scene.splinecode" />
           </div>
-          <button className="button-5">View</button>
+          <a
+            className="button-5"
+            href="https://github.com/simon-bonnedahl/cryptowords-ios"
+          >
+            View
+          </a>
         </div>
         <div className="project hidden">
           <h2>Food Delivery App </h2>
           <div className="spline-scene-phone">
             <Spline scene="https://prod.spline.design/lW-DWl-ureIZJEQK/scene.splinecode" />
           </div>
-          <button className="button-5">View</button>
+
+          <a
+            className="button-5"
+            href="https://github.com/simon-bonnedahl/food-delivery-app"
+          >
+            View
+          </a>
         </div>
       </div>
     </section>
