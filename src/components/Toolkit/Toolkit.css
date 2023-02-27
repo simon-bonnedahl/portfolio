@@ -1,0 +1,31 @@
+#toolkit {
+    background-color: #fffffe;
+    min-height: 90vh;
+}
+
+#toolkit h1 {
+    color: #0F0E17;
+    position: absolute;
+    left: 5%;
+    top: 0%;
+}
+
+.custom-shape-divider-bottom-1670455273 {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1670455273 svg {
+    position: relative;
+    display: block;
+    width: calc(125% + 1.3px);
+    height: 131px;
+}
+
+.custom-shape-divider-bottom-1670455273 .shape-fill {
+    fill: #0F0E17;
+}

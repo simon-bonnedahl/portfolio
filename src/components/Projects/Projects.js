@@ -18,7 +18,7 @@ const Projects = () => {
   }
   return (
     <section id="projects">
-      <h1 className="hidden">Projects</h1>
+      <h1 className="hidden">Projects(in progress)</h1>
       <div id="projects-container">
         <div className="project hidden">
           <h2>CryptoWords </h2>
@@ -29,7 +29,7 @@ const Projects = () => {
             className="button-5"
             href="https://github.com/simon-bonnedahl/cryptowords-ios"
           >
-            View
+            View Code
           </a>
         </div>
         <div className="project hidden">
@@ -42,7 +42,7 @@ const Projects = () => {
             className="button-5"
             href="https://github.com/simon-bonnedahl/food-delivery-app"
           >
-            View
+            View Code
           </a>
         </div>
       </div>
