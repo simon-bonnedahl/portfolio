@@ -1,13 +1,11 @@
-import './Contact.css'
+import "./Contact.css";
 const Contact = () => {
-    return ( 
-        <section id="contact">
-            <h1 className='hidden'>Contact</h1>
-        <footer>
+  return (
+    <section id="contact">
+      <h1 className="hidden">Contact(in progress)</h1>
+      <footer></footer>
+    </section>
+  );
+};
 
-        </footer>
-        </section>
-    );
-}
- 
 export default Contact;

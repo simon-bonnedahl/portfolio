@@ -12,7 +12,9 @@ import $ from "jquery";
 function App() {
   $(document).ready(function () {
     setTimeout(function () {
-      $("#loader-section").fadeOut("slow", function () {});
+      $("#loader-section").fadeOut("slow", function () {
+        $("#home").addClass("visible");
+      });
     }, 2000);
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -28,6 +30,10 @@ function App() {
       observer.observe(element);
     });
   });
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div>

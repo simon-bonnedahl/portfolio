@@ -2,27 +2,46 @@ import "./About.css";
 import Spline from "@splinetool/react-spline";
 import { useRef } from "react";
 import $ from "jquery";
+import { useState } from "react";
 const About = () => {
   const avatar = useRef();
+
+  let lastScrollPos = 0;
+
+  const [flipped, setFlipped] = useState(false);
 
   function onLoad(spline) {
     avatar.current = spline.findObjectByName("people");
   }
-  function rotateRight() {
-    avatar.current.rotation.y += 0.01;
-  }
 
-  function rotateLeft() {
-    avatar.current.rotation.y -= 0.01;
+  const flip = () => {
+    if (!flipped) {
+      avatar.current.rotation.x = 3.14 / 2.5;
+      setFlipped(true);
+    } else {
+      avatar.current.rotation.x = 0;
+      setFlipped(false);
+    }
+  };
+
+  function rotate(scrollPos) {
+    let scrollDiff = scrollPos - lastScrollPos;
+    avatar.current.rotation.y += scrollDiff * 0.005;
+    lastScrollPos = scrollPos;
   }
 
   window.onscroll = function (e) {
-    if (this.oldScroll > this.scrollY) {
-      rotateLeft();
-    } else {
-      rotateRight();
-    }
-    this.oldScroll = this.scrollY;
+    rotate(this.scrollY);
+  };
+
+  const goToProjects = () => {
+    flip();
+    $("html, body").animate(
+      {
+        scrollTop: $("#projects").offset().top,
+      },
+      1000
+    );
   };
 
   return (
@@ -42,29 +61,38 @@ const About = () => {
       </div>
       <h1 className="hidden">About</h1>
       <div className="hidden" id="aboutText">
-        <p>
-          Hello and welcome to my portfolio! I'm Simon, a 23 year old Student
-          from Sweden.
-        </p>
-        <p>
-          I'm currently studying Master of Science in Information Technology at
-          Linköping University.
-        </p>
-        <p>
-          I have a big passion for software development, and I love using my
-          skills to create Web and Mobile applications.
-        </p>
-        <p>
-          I have been coding for about 10 years and I have experience in a wide
-          range of areas. I'm currently working on a variety of projects, mostly
-          Full-Stack Web.
-        </p>
-        <p>
-          Thank you for taking the time to visit my portfolio, and please feel
-          free to contact me.
-        </p>
+        {flipped ? (
+          <div>
+            <p>What am I working on?</p>
+            <a onClick={() => goToProjects()}>Check it out</a>
+          </div>
+        ) : (
+          <div>
+            <p>
+              Hello and welcome to my portfolio! I'm Simon, a 23 year old
+              Student from Sweden.
+            </p>
+            <p>
+              I'm currently studying Master of Science in Information Technology
+              at Linköping University.
+            </p>
+            <p>
+              I have a big passion for software development, and I love using my
+              skills to create Web and Mobile applications.
+            </p>
+            <p>
+              I have been coding for about 10 years and I have experience in a
+              wide range of areas. I'm currently working on a variety of
+              projects, mostly Full-Stack Web.
+            </p>
+            <p>
+              Thank you for taking the time to visit my portfolio, and please
+              feel free to contact me.
+            </p>
+          </div>
+        )}
       </div>
-      <div className="hidden" id="avatar">
+      <div className="hidden" id="avatar" onClick={() => flip()}>
         <Spline
           scene="https://prod.spline.design/lA7FHLBZ5EcJZep8/scene.splinecode"
           onLoad={onLoad}

@@ -10,15 +10,16 @@ const Home = () => {
   $(document).on("click", ".learn-more", function () {
     $("html, body").animate(
       {
+        easing: "easeIn",
         scrollTop: $("#about").offset().top,
       },
-      500
+      "slow"
     );
     return false;
   });
 
   return (
-    <section id="home">
+    <section className="hidden" id="home">
       <div id="left">
         <div id="homeText">
           <h1>
